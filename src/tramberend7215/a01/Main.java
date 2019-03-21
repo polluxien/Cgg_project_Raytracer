@@ -1,9 +1,8 @@
 package tramberend7215.a01;
 
-import cgtools.Vec3;
-import static cgtools.Vec3.*;
 import java.io.IOException;
-import java.util.function.*;
+
+import cgtools.Vec3;
 import tramberend7215.Image;
 
 public class Main {
