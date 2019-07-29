@@ -1,5 +1,9 @@
+/**
+ * @author henrik.tramberend@beuth-hochschule.de
+ */
+
 package cgtools;
 
 public interface Sampler {
-    public Vec3 color(double x, double y);
+    public Color getColor(double x, double y);
 }

@@ -1,3 +1,7 @@
+/**
+ * @author henrik.tramberend@beuth-hochschule.de
+ */
+
 package cgtools;
 
 import java.awt.image.BufferedImage;
@@ -5,7 +9,8 @@ import java.awt.image.DataBuffer;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import static cgtools.Vec3.*;
+import static cgtools.Vector.*;
+import static cgtools.Color.*;
 
 public class ImageTexture implements Sampler {
     private BufferedImage image;
@@ -33,21 +38,21 @@ public class ImageTexture implements Sampler {
         }
     }
 
-    public Vec3 color(double u, double v) {
+    public Color getColor(double u, double v) {
         int x = (int) ((u - Math.floor(u)) * width);
         int y = (int) ((v - Math.floor(v)) * height);
         double[] pixelBuffer = new double[components];
         image.getRaster().getPixel(x, y, pixelBuffer);
-        Vec3 color = Vec3.red;
+        Color color = red;
         switch (components) {
         case 1:
-            color = vec3(pixelBuffer[0], 0, 0);
+            color = color(pixelBuffer[0], 0, 0);
         case 2:
-            color = vec3(pixelBuffer[0], pixelBuffer[1], 0);
+            color = color(pixelBuffer[0], pixelBuffer[1], 0);
         case 3:
-            color = vec3(pixelBuffer[0], pixelBuffer[1], pixelBuffer[2]);
+            color = color(pixelBuffer[0], pixelBuffer[1], pixelBuffer[2]);
         case 4:
-            color = vec3(pixelBuffer[0], pixelBuffer[1], pixelBuffer[2]);
+            color = color(pixelBuffer[0], pixelBuffer[1], pixelBuffer[2]);
         }
         return divide(color, componentScale);
     }
