@@ -16,7 +16,9 @@ public class Image {
     }
 
     private void notYetImplemented() {
-        System.out.println("Class Image is not yet implemented.");
+        System.out
+                .println(
+                        "Please complete the implementation of class cgg.Image as part of assignment 1.");
         System.exit(1);
     }
 }

@@ -1,7 +1,6 @@
 package cgg;
 
 import cgtools.*;
-import static cgtools.Vector.*;
 import static cgtools.Color.*;
 
 public class Template {
