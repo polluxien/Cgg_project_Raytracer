@@ -3,12 +3,12 @@ package cgg;
 import cgtools.*;
 import static cgtools.Color.*;
 
-public class Template {
+public class A01 {
 
     public static void main(String[] args) {
         final int width = 160;
         final int height = 90;
-        final String filename = "doc/image.png";
+        final String filename = "doc/a01-image.png";
 
         class ConstantColor {
             Color color;
