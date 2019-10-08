@@ -24,7 +24,7 @@ public class A01 {
 
         Image image = new Image(width, height);
 
-        ConstantColor allGray = new ConstantColor(gray);
+        ConstantColor allGray = new ConstantColor(green);
         for (int x = 0; x != width; x++) {
             for (int y = 0; y != height; y++) {
                 image.setPixel(x, y, allGray.getColor(x, y));
