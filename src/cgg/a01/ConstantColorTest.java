@@ -11,6 +11,6 @@ public class ConstantColorTest {
   @Test
   public void testNothing() {
     ConstantColor cc = new ConstantColor(color(1, 1, 1));
-    assertThat(cc.getColor(4.3, 5.6), is(equalTo(color(2, 1, 1))));
+    assertThat(cc.getColor(4.3, 5.6), is(equalTo(color(1, 1, 1))));
   }
 }
