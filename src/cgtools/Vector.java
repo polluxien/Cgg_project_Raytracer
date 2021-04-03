@@ -1,7 +1,7 @@
 /** @author henrik.tramberend@beuth-hochschule.de */
 package cgtools;
 
-public abstract class Vector {
+public final class Vector {
   public final double x, y, z;
 
   protected Vector(double x, double y, double z) {
@@ -78,7 +78,19 @@ public abstract class Vector {
     return direction(a.x / s, a.y / s, a.z / s);
   }
 
-  public static double dotProduct(Vector a, Vector b) {
+  public static double dotProduct(Direction a, Direction b) {
+    return a.x * b.x + a.y * b.y + a.z * b.z;
+  }
+
+  public static double dotProduct(Direction a, Point b) {
+    return a.x * b.x + a.y * b.y + a.z * b.z;
+  }
+
+  public static double dotProduct(Point a, Direction b) {
+    return a.x * b.x + a.y * b.y + a.z * b.z;
+  }
+
+  public static double dotProduct(Point a, Point b) {
     return a.x * b.x + a.y * b.y + a.z * b.z;
   }
 
@@ -86,11 +98,11 @@ public abstract class Vector {
     return direction(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
   }
 
-  public static double length(Vector a) {
+  public static double length(Direction a) {
     return Math.sqrt(a.x * a.x + a.y * a.y + a.z * a.z);
   }
 
-  public static double squaredLength(Vector a) {
+  public static double squaredLength(Direction a) {
     return a.x * a.x + a.y * a.y + a.z * a.z;
   }
 
@@ -98,12 +110,14 @@ public abstract class Vector {
     return divide(a, length(a));
   }
 
-  public static Color asColor(Vector a) {
+  @Deprecated
+  public static Color asColor(Direction a) {
     return color(a.x, a.y, a.z);
   }
 
-  public static Direction directionTo(Point p) {
-    return direction(p.x, p.y, p.z);
+  @Deprecated
+  public static Color asColor(Point a) {
+    return color(a.x, a.y, a.z);
   }
 
   @Override

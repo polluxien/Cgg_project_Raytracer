@@ -15,9 +15,12 @@ public class Image {
     notYetImplemented();
   }
 
+  public void sample(Sampler s) {
+    notYetImplemented();
+  }
+
   private void notYetImplemented() {
-    System.out.println(
-        "Please complete the implementation of class cgg.Image as part of assignment 1.");
+    System.err.println("Please complete the implementation of class cgg.Image as part of assignment 1.");
     System.exit(1);
   }
 }

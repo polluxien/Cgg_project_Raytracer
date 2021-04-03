@@ -1,10 +1,15 @@
 /** @author henrik.tramberend@beuth-hochschule.de */
 package cgtools;
 
-public final class Direction extends Vector {
+import static cgtools.Vector.*;
+
+public final class Direction {
+  public final double x, y, z;
 
   protected Direction(double x, double y, double z) {
-    super(x, y, z);
+    this.x = x;
+    this.y = y;
+    this.z = z;
   }
 
   @Override
@@ -14,8 +19,10 @@ public final class Direction extends Vector {
 
   @Override
   public boolean equals(Object o) {
-    if (!(o instanceof Direction)) return false;
-    if (o == this) return true;
+    if (!(o instanceof Direction))
+      return false;
+    if (o == this)
+      return true;
     Direction v = (Direction) o;
     return Util.isZero(length(subtract(this, v)));
   }

@@ -1,10 +1,15 @@
 /** @author henrik.tramberend@beuth-hochschule.de */
 package cgtools;
 
-public final class Point extends Vector {
+import static cgtools.Vector.*;
+
+public final class Point {
+  public final double x, y, z;
 
   protected Point(double x, double y, double z) {
-    super(x, y, z);
+    this.x = x;
+    this.y = y;
+    this.z = z;
   }
 
   @Override
@@ -14,8 +19,10 @@ public final class Point extends Vector {
 
   @Override
   public boolean equals(Object o) {
-    if (!(o instanceof Point)) return false;
-    if (o == this) return true;
+    if (!(o instanceof Point))
+      return false;
+    if (o == this)
+      return true;
     Point v = (Point) o;
     return Util.isZero(length(subtract(this, v)));
   }

@@ -17,8 +17,14 @@ public class ImageTexture implements Sampler {
   private final double componentScale;
   private final int components;
 
-  public ImageTexture(String filename) throws IOException {
-    image = ImageIO.read(new File(filename));
+  public ImageTexture(String filename) {
+    try {
+      image = ImageIO.read(new File(filename));
+    } catch (IOException e) {
+      System.err.println("Cannot read image from: " + filename);
+      System.exit(1);
+    }
+
     width = image.getWidth();
     height = image.getHeight();
     components = image.getRaster().getNumBands();
@@ -37,6 +43,9 @@ public class ImageTexture implements Sampler {
   }
 
   public Color getColor(double u, double v) {
+    if (u < 0 || u > 1 || v < 0 || v > 1)
+      return black;
+
     int x = (int) ((u - Math.floor(u)) * width);
     int y = (int) ((v - Math.floor(v)) * height);
     double[] pixelBuffer = new double[components];
