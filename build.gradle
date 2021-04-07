@@ -20,10 +20,6 @@ sourceSets {
   test.java.srcDirs = ['src']
 }
 
-compileJava {
-    options.release = 15
-}
-
 12.times { count -> 
   String number = (count + 1).toString().padLeft(2,"0");
   task("a${number}", type: JavaExec) {
