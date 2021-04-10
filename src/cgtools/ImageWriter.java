@@ -54,9 +54,12 @@ public class ImageWriter {
         raster.setPixel(x, y, rgb);
       }
     }
-    File outputfile = File.createTempFile("image-", ".png");
-    ImageIO.write(image, "png", outputfile);
-    Files.move(Paths.get(outputfile.getAbsolutePath()), Paths.get(filename), REPLACE_EXISTING);
+    // This fails on Windows across drive boundaries.
+    // File outputfile = File.createTempFile("image-", ".png");
+    // ImageIO.write(image, "png", outputfile);
+    // Files.move(Paths.get(outputfile.getAbsolutePath()), Paths.get(filename),
+    // REPLACE_EXISTING);
+    ImageIO.write(image, "png", new File(filename));
   }
 
   private static double clamp(double v) {
