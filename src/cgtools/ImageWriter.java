@@ -59,7 +59,9 @@ public class ImageWriter {
     // ImageIO.write(image, "png", outputfile);
     // Files.move(Paths.get(outputfile.getAbsolutePath()), Paths.get(filename),
     // REPLACE_EXISTING);
-    ImageIO.write(image, "png", new File(filename));
+    File file = new File(filename);
+    file.getParentFile().mkdirs();
+    ImageIO.write(image, "png", file);
   }
 
   private static double clamp(double v) {
