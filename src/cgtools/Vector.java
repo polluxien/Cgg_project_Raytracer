@@ -2,12 +2,8 @@
 package cgtools;
 
 public final class Vector {
-  public final double x, y, z;
 
-  protected Vector(double x, double y, double z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
+  private Vector() {
   }
 
   public static Direction direction(double x, double y, double z) {
@@ -59,7 +55,8 @@ public final class Vector {
   }
 
   public static Point interplolate(Point a, Point b, double t) {
-    return point(a.x * (1 - t) + b.x * t, a.y * (1 - t) + b.y * t, a.z * (1 - t) + b.z * t);
+    return point(a.x * (1 - t) + b.x * t, a.y * (1 - t) + b.y * t,
+        a.z * (1 - t) + b.z * t);
   }
 
   public static Direction multiply(double s, Direction a) {
@@ -95,7 +92,8 @@ public final class Vector {
   }
 
   public static Direction crossProduct(Direction a, Direction b) {
-    return direction(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
+    return direction(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z,
+        a.x * b.y - a.y * b.x);
   }
 
   public static double length(Direction a) {
@@ -118,16 +116,6 @@ public final class Vector {
   @Deprecated
   public static Color asColor(Point a) {
     return color(a.x, a.y, a.z);
-  }
-
-  @Override
-  public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + Double.valueOf(x).hashCode();
-    result = prime * result + Double.valueOf(y).hashCode();
-    result = prime * result + Double.valueOf(z).hashCode();
-    return result;
   }
 
   public static final Point zero = point(0, 0, 0);

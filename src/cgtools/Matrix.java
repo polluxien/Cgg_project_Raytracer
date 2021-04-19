@@ -91,14 +91,6 @@ public final class Matrix {
     return rotation(direction(ax, ay, az), angle);
   }
 
-  public static Matrix scaling(Vector s) {
-    Matrix m = new Matrix();
-    m.set(0, 0, s.x);
-    m.set(1, 1, s.y);
-    m.set(2, 2, s.z);
-    return m;
-  }
-
   public static Matrix scaling(double x, double y, double z) {
     Matrix m = new Matrix();
     m.set(0, 0, x);
