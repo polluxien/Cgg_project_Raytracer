@@ -54,6 +54,14 @@ public final class Matrix {
     return m;
   }
 
+  public static Matrix translation(Point t) {
+    Matrix m = new Matrix();
+    m.set(3, 0, t.x);
+    m.set(3, 1, t.y);
+    m.set(3, 2, t.z);
+    return m;
+  }
+
   public static Matrix translation(double x, double y, double z) {
     Matrix m = new Matrix();
     m.set(3, 0, x);

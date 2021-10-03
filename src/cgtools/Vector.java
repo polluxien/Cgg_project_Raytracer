@@ -26,6 +26,14 @@ public final class Vector {
     return r;
   }
 
+  public static Point add(Point a, Point b, Point... vs) {
+    Point r = point(a.x + b.x, a.y + b.y, a.z + b.z);
+    for (Point v : vs) {
+      r = point(r.x + v.x, r.y + v.y, r.z + v.z);
+    }
+    return r;
+  }
+
   public static Point add(Point a, Direction b, Direction... vs) {
     Point r = new Point(a.x + b.x, a.y + b.y, a.z + b.z);
     for (Direction v : vs) {
@@ -63,6 +71,10 @@ public final class Vector {
     return direction(s * a.x, s * a.y, s * a.z);
   }
 
+  public static Direction multiply(double s, Point a) {
+    return direction(s * a.x, s * a.y, s * a.z);
+  }
+
   public static Direction multiply(Direction a, double s) {
     return direction(s * a.x, s * a.y, s * a.z);
   }
@@ -72,6 +84,10 @@ public final class Vector {
   }
 
   public static Direction divide(Direction a, double s) {
+    return direction(a.x / s, a.y / s, a.z / s);
+  }
+
+  public static Direction divide(Point a, double s) {
     return direction(a.x / s, a.y / s, a.z / s);
   }
 
