@@ -1,7 +1,6 @@
 /** @author henrik.tramberend@beuth-hochschule.de */
 package cgtools;
 
-import static java.nio.file.StandardCopyOption.*;
 
 import java.awt.color.ColorSpace;
 import java.awt.image.BufferedImage;
@@ -11,8 +10,6 @@ import java.awt.image.Raster;
 import java.awt.image.WritableRaster;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import javax.imageio.ImageIO;
 

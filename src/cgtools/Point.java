@@ -3,14 +3,7 @@ package cgtools;
 
 import static cgtools.Vector.*;
 
-public final class Point {
-  public final double x, y, z;
-
-  protected Point(double x, double y, double z) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-  }
+public record Point(double x, double y, double z) {
 
   @Override
   public String toString() {

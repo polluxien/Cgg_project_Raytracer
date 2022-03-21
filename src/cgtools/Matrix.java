@@ -13,32 +13,32 @@ public final class Matrix {
 
   public static Matrix matrix(Direction b0, Direction b1, Direction b2) {
     Matrix m = new Matrix();
-    m.set(0, 0, b0.x);
-    m.set(1, 0, b0.y);
-    m.set(2, 0, b0.z);
-    m.set(0, 1, b1.x);
-    m.set(1, 1, b1.y);
-    m.set(2, 1, b1.z);
-    m.set(0, 2, b2.x);
-    m.set(1, 2, b2.y);
-    m.set(2, 2, b2.z);
+    m.set(0, 0, b0.x());
+    m.set(1, 0, b0.y());
+    m.set(2, 0, b0.z());
+    m.set(0, 1, b1.x());
+    m.set(1, 1, b1.y());
+    m.set(2, 1, b1.z());
+    m.set(0, 2, b2.x());
+    m.set(1, 2, b2.y());
+    m.set(2, 2, b2.z());
     return m;
   }
 
   public static Matrix matrix(Direction b0, Direction b1, Direction b2, Point b3) {
     Matrix m = new Matrix();
-    m.set(0, 0, b0.x);
-    m.set(1, 0, b0.y);
-    m.set(2, 0, b0.z);
-    m.set(0, 1, b1.x);
-    m.set(1, 1, b1.y);
-    m.set(2, 1, b1.z);
-    m.set(0, 2, b2.x);
-    m.set(1, 2, b2.y);
-    m.set(2, 2, b2.z);
-    m.set(0, 3, b3.x);
-    m.set(1, 3, b3.y);
-    m.set(2, 3, b3.z);
+    m.set(0, 0, b0.x());
+    m.set(1, 0, b0.y());
+    m.set(2, 0, b0.z());
+    m.set(0, 1, b1.x());
+    m.set(1, 1, b1.y());
+    m.set(2, 1, b1.z());
+    m.set(0, 2, b2.x());
+    m.set(1, 2, b2.y());
+    m.set(2, 2, b2.z());
+    m.set(0, 3, b3.x());
+    m.set(1, 3, b3.y());
+    m.set(2, 3, b3.z());
     return m;
   }
 
@@ -48,17 +48,17 @@ public final class Matrix {
 
   public static Matrix translation(Direction t) {
     Matrix m = new Matrix();
-    m.set(3, 0, t.x);
-    m.set(3, 1, t.y);
-    m.set(3, 2, t.z);
+    m.set(3, 0, t.x());
+    m.set(3, 1, t.y());
+    m.set(3, 2, t.z());
     return m;
   }
 
   public static Matrix translation(Point t) {
     Matrix m = new Matrix();
-    m.set(3, 0, t.x);
-    m.set(3, 1, t.y);
-    m.set(3, 2, t.z);
+    m.set(3, 0, t.x());
+    m.set(3, 1, t.y());
+    m.set(3, 2, t.z());
     return m;
   }
 
@@ -75,10 +75,10 @@ public final class Matrix {
     final double rad = (angle / 180.0f) * ((double) Math.PI);
     final double cosa = (double) Math.cos(rad);
     final double sina = (double) Math.sin(rad);
-    final double l = Math.sqrt(axis.x * axis.x + axis.y * axis.y + axis.z * axis.z);
-    final double rx = axis.x / l;
-    final double ry = axis.y / l;
-    final double rz = axis.z / l;
+    final double l = Math.sqrt(axis.x() * axis.x() + axis.y() * axis.y() + axis.z() * axis.z());
+    final double rx = axis.x() / l;
+    final double ry = axis.y() / l;
+    final double rz = axis.z() / l;
     final double icosa = 1 - cosa;
 
     m.set(0, 0, (double) (icosa * rx * rx + cosa));
@@ -109,7 +109,8 @@ public final class Matrix {
 
   public static Matrix multiply(Matrix a, Matrix b, Matrix... ms) {
     Matrix r = a.multiply(b);
-    for (Matrix m : ms) r = r.multiply(m);
+    for (Matrix m : ms)
+      r = r.multiply(m);
     return r;
   }
 
@@ -255,16 +256,16 @@ public final class Matrix {
   }
 
   public static Point multiply(Matrix m, Point p) {
-    final double x = m.get(0, 0) * p.x + m.get(1, 0) * p.y + m.get(2, 0) * p.z + m.get(3, 0);
-    final double y = m.get(0, 1) * p.x + m.get(1, 1) * p.y + m.get(2, 1) * p.z + m.get(3, 1);
-    final double z = m.get(0, 2) * p.x + m.get(1, 2) * p.y + m.get(2, 2) * p.z + m.get(3, 2);
+    final double x = m.get(0, 0) * p.x() + m.get(1, 0) * p.y() + m.get(2, 0) * p.z() + m.get(3, 0);
+    final double y = m.get(0, 1) * p.x() + m.get(1, 1) * p.y() + m.get(2, 1) * p.z() + m.get(3, 1);
+    final double z = m.get(0, 2) * p.x() + m.get(1, 2) * p.y() + m.get(2, 2) * p.z() + m.get(3, 2);
     return point(x, y, z);
   }
 
   public static Direction multiply(Matrix m, Direction d) {
-    double x = m.get(0, 0) * d.x + m.get(1, 0) * d.y + m.get(2, 0) * d.z;
-    double y = m.get(0, 1) * d.x + m.get(1, 1) * d.y + m.get(2, 1) * d.z;
-    double z = m.get(0, 2) * d.x + m.get(1, 2) * d.y + m.get(2, 2) * d.z;
+    double x = m.get(0, 0) * d.x() + m.get(1, 0) * d.y() + m.get(2, 0) * d.z();
+    double y = m.get(0, 1) * d.x() + m.get(1, 1) * d.y() + m.get(2, 1) * d.z();
+    double z = m.get(0, 2) * d.x() + m.get(1, 2) * d.y() + m.get(2, 2) * d.z();
     return direction(x, y, z);
   }
 
@@ -397,15 +398,21 @@ public final class Matrix {
 
   @Override
   public boolean equals(Object o) {
-    if (!(o instanceof Matrix)) return false;
-    if (o == this) return true;
+    if (!(o instanceof Matrix))
+      return false;
+    if (o == this)
+      return true;
     Matrix m = (Matrix) o;
-    for (int i = 0; i != 16; i++) if (values[i] != m.values[i]) return false;
+    for (int i = 0; i != 16; i++)
+      if (values[i] != m.values[i])
+        return false;
     return true;
   }
 
   public boolean equals(Matrix m, double epsilon) {
-    for (int i = 0; i != 16; i++) if (!Util.areEqual(values[i], m.values[i])) return false;
+    for (int i = 0; i != 16; i++)
+      if (!Util.areEqual(values[i], m.values[i]))
+        return false;
     return true;
   }
 

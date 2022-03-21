@@ -1,7 +1,7 @@
+/** @author henrik.tramberend@beuth-hochschule.de */
 package cgg.a01;
 
-import static cgtools.Color.*;
-
+import static cgtools.Vector.*;
 import cgg.*;
 
 public class Main {

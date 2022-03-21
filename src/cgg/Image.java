@@ -1,3 +1,4 @@
+/** @author henrik.tramberend@beuth-hochschule.de */
 package cgg;
 
 import cgtools.*;

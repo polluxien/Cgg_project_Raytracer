@@ -1,7 +1,6 @@
 /** @author henrik.tramberend@beuth-hochschule.de */
 package cgtools;
 
-import static cgtools.Color.*;
 import static cgtools.Vector.*;
 
 import java.awt.image.BufferedImage;
