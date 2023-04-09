@@ -17,11 +17,23 @@ public final class Util {
   }
 
   public static final Color shade(Direction normal, Color color) {
-    if (normal == null) return color;
+    if (normal == null)
+      return color;
 
     Direction lightDir = normalize(direction(1, 1, 0.5));
     Color ambient = multiply(0.1, color);
     Color diffuse = multiply(0.9 * Math.max(0, dotProduct(lightDir, normal)), color);
     return add(ambient, diffuse);
+  }
+
+  private static long startTime;
+
+  public static void start() {
+    startTime = System.currentTimeMillis();
+  }
+
+  public static double finish() {
+    long stopTime = System.currentTimeMillis();
+    return (stopTime - startTime) / 1000.0;
   }
 }

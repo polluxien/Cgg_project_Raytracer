@@ -13,10 +13,7 @@ public class Image {
   }
 
   public void write(String filename) {
-    notYetImplemented();
-  }
-
-  public void sample(Sampler s) {
+    // Use cggtools.ImageWriter.write() to implement this.
     notYetImplemented();
   }
 

@@ -27,11 +27,15 @@ public class Random extends java.util.Random {
     return generator.nextDouble();
   }
 
-  public Random() {
+  public static void seed(int s) {
+    generator = new Random(s);
+  }
+
+  private Random() {
     this(System.nanoTime());
   }
 
-  public Random(final long seed) {
+  private Random(final long seed) {
     x = seed;
   }
 

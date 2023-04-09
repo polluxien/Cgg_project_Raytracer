@@ -43,10 +43,11 @@ public class ImageTexture implements Sampler {
 
   public Color getColor(double u, double v) {
     if (u < 0 || u > 1 || v < 0 || v > 1)
-      return black;
+    return black;
 
     int x = (int) ((u - Math.floor(u)) * width);
     int y = (int) ((v - Math.floor(v)) * height);
+
     double[] pixelBuffer = new double[components];
     image.getRaster().getPixel(x, y, pixelBuffer);
     Color color = red;
