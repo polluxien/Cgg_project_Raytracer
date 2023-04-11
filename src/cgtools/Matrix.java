@@ -303,14 +303,6 @@ public final class Matrix {
     return n;
   }
 
-  public static Vec4 multiply(Matrix m, Vec4 p) {
-    final double x = m.get(0, 0) * p.x() + m.get(1, 0) * p.y() + m.get(2, 0) * p.z() + m.get(3, 0);
-    final double y = m.get(0, 1) * p.x() + m.get(1, 1) * p.y() + m.get(2, 1) * p.z() + m.get(3, 1);
-    final double z = m.get(0, 2) * p.x() + m.get(1, 2) * p.y() + m.get(2, 2) * p.z() + m.get(3, 2);
-    final double w = m.get(0, 3) * p.x() + m.get(1, 3) * p.y() + m.get(2, 3) * p.z() + m.get(3, 3);
-    return new Vec4(x, y, z, w);
-  }
-
   public static Point multiply(Matrix m, Point p) {
     final double x = m.get(0, 0) * p.x() + m.get(1, 0) * p.y() + m.get(2, 0) * p.z() + m.get(3, 0);
     final double y = m.get(0, 1) * p.x() + m.get(1, 1) * p.y() + m.get(2, 1) * p.z() + m.get(3, 1);

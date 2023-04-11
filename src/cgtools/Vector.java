@@ -39,14 +39,6 @@ public final class Vector {
     return r;
   }
 
-  public static Vec4 add(Vec4 a, Vec4 b, Vec4... vs) {
-    Vec4 r = new Vec4(a.x() + b.x(), a.y() + b.y(), a.z() + b.z(), a.w() + b.w());
-    for (Vec4 v : vs) {
-      r = new Vec4(r.x() + v.x(), r.y() + v.y(), r.z() + v.z(), r.w() + v.w());
-    }
-    return r;
-  }
-
   public static Point add(Point a, Direction b, Direction... vs) {
     Point r = new Point(a.x() + b.x(), a.y() + b.y(), a.z() + b.z());
     for (Direction v : vs) {
@@ -78,10 +70,6 @@ public final class Vector {
   public static Point interplolate(Point a, Point b, double t) {
     return point(a.x() * (1 - t) + b.x() * t, a.y() * (1 - t) + b.y() * t,
         a.z() * (1 - t) + b.z() * t);
-  }
-
-  public static Vec4 multiply(double s, Vec4 a) {
-    return new Vec4(s * a.x(), s * a.y(), s * a.z(), s * a.w());
   }
 
   public static Direction multiply(double s, Direction a) {
