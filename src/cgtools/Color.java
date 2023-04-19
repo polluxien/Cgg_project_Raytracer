@@ -10,4 +10,8 @@ public record Color(double r, double g, double b) {
   public String toString() {
     return String.format("(Col: %.2f %.2f %.2f)", r, g, b);
   }
+
+public static Color getColor(float hue, float f, float h) {
+    return null;
+}
 }

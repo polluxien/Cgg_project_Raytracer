@@ -11,7 +11,9 @@ public class Main {
     final int height = 270;
 
     // This class instance defines the contents of the image.
-    ConstantColor content = new ConstantColor(blue);
+    //ConstantColor content = new ConstantColor(gray);
+    //Schachbrett_muster content = new Schachbrett_muster(white, black, 10);
+    Regelmäßiges_muster content = new Regelmäßiges_muster(width, height, red, white, 10);
 
     // Creates an image and iterates over all pixel positions inside the image.
     Image image = new Image(width, height);
@@ -23,7 +25,7 @@ public class Main {
     }
 
     // Write the image to disk.
-    final String filename = "doc/a01-image.png";
+    final String filename = "doc/a01-pattern.png";
     image.write(filename);
     System.out.println("Wrote image: " + filename);
   }
