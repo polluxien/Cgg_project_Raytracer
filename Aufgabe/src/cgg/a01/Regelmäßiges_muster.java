@@ -9,14 +9,14 @@ public class Regelmäßiges_muster {
     private Color color_zwei;
     private int größe;
 
-    private int width;
+    //private int width;
     private int height;
 
     public Regelmäßiges_muster(int width, int height, Color eins, Color zwei, int größe) {
         this.color_eins = eins;
         this.color_zwei = zwei;
         this.größe = größe;
-        this.width = width;
+       // this.width = width;
         this.height = height;
     }
 
