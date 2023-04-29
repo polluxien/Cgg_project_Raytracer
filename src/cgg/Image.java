@@ -43,7 +43,7 @@ public class Image {
         Color pixelcolor = black;
         for (int i = 0; i < n; i++) {
           double rx = Random.random();
-          double ry = i + Random.random();
+          double ry = Random.random();
           double xs = x + rx;
           double ys = y + ry;
 
