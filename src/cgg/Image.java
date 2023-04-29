@@ -37,7 +37,7 @@ public class Image {
     }
   }
 
-  public void stratifiedsampler(Sampler kreis, int n) {
+  public void supersampeling(Sampler kreis, int n) {
     for (int x = 0; x != width; x++) {
       for (int y = 0; y != height; y++) {
         Color pixelcolor = black;
