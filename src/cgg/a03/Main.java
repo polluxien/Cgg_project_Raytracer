@@ -3,6 +3,7 @@ package cgg.a03;
 
 import cgg.*;
 import cgtools.Point;
+import cgtools.Random;
 import cgtools.Vector;
 
 import static java.lang.Math.*;
@@ -15,7 +16,7 @@ public class Main {
     final int width = 1920;
     final int height = 1080;
 
-    var camera = new Lochkamera(width, height, toRadians(200));
+    var camera = new Lochkamera(width, height, toRadians(220));
 
     var kugeln = new ArrayList<Kugel>();
     int n = 10;
@@ -26,7 +27,7 @@ public class Main {
                 i * (double) width / (n - 1) - width / 2,
                 y * (double) height / (n - 1) - height / 2,
                 500),
-                width / 10 / 2, Vector.Colorrandom));
+                width / 10 / 2, Vector.color(Random.random(), 0.1, 0.15)));
       }
     }
 

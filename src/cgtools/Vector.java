@@ -221,5 +221,4 @@ public final class Vector {
   public static final Color red = color(1, 0, 0);
   public static final Color green = color(0, 1, 0);
   public static final Color blue = color(0, 0, 1);
-  public static final Color Colorrandom = color(Random.random(),Random.random(), Random.random());
 }

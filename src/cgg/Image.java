@@ -48,7 +48,7 @@ public class Image {
           double ys = y + (ry + ry) / n;
           pixelcolor = add(pixelcolor, sum.getColor(xs, ys));
         }
-        setPixel(x, y, divide(pixelcolor, n*n));
+        setPixel(x, y, divide(pixelcolor, n * n));
       }
     }
   }

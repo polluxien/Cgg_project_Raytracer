@@ -15,12 +15,12 @@ public class Lochkamera {
         this.öffnungswinkel = d;
     }
 
-    public Ray generateRay(double x, double y){
+    public Ray generateRay(double x, double y) {
         double xv = x - width / 2.0;
         double yv = -(y - height / 2.0);
         double zv = -((width / 2.0) / Math.tan(öffnungswinkel / 2.0));
         Direction u = Vector.normalize(new Direction(xv, yv, zv));
         return new Ray(u, 0, Double.POSITIVE_INFINITY);
     }
-    
+
 }
