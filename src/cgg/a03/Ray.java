@@ -1,19 +1,61 @@
 package cgg.a03;
 
-import cgtools.Point;
+import cgtools.*;
+import static cgtools.Vector.*;
 
 public class Ray {
 
-    private double x0;
+    private Point ursprung;
+    private Direction d;
+    private double tmin;
+    private double tmax;
 
-    public Point pointAt(double t){
-        Point point = new Point(x0 + t, t, t);
-     return null;
+    public Ray(Direction d, double tmin, double tmax) {
+        this.ursprung = new Point(0, 0, 0);
+        this.d = d;
+        this.tmin = tmin;
+        this.tmax = tmax;
+
     }
 
-    public boolean isValid(double t){
-        return false;
+    public Point pointAt(double t) {
+        return Vector.add(multiply(d, t), ursprung);
     }
-    
+
+    public boolean isValid(double t) {
+        return t > tmin && t <= tmax;
+    }
+
+    public double getTmin() {
+        return tmin;
+    }
+
+    public void setTmin(double tmin) {
+        this.tmin = tmin;
+    }
+
+    public double getTmax() {
+        return tmax;
+    }
+
+    public void setTmax(double tmax) {
+        this.tmax = tmax;
+    }
+
+    public Point getUrsprung() {
+        return ursprung;
+    }
+
+    public void setUrsprung(Point ursprung) {
+        this.ursprung = ursprung;
+    }
+
+    public Direction getD() {
+        return d;
+    }
+
+    public void setD(Direction d) {
+        this.d = d;
+    }
+
 }
-

@@ -18,7 +18,7 @@ public class Image {
 
   public void setPixel(int x, int y, Color color) {
     int index = (width * y + x) * 3;
-    double gamma = 1 / 2.2;
+    double gamma = 1 / 4.2;
     data[index] = Math.pow(color.r(), gamma);
     data[index + 1] = Math.pow(color.g(), gamma);
     data[index + 2] = Math.pow(color.b(), gamma);
@@ -29,27 +29,26 @@ public class Image {
     ImageWriter.write(filename, data, width, height);
   }
 
-  public void sample(Sampler kreis) {
+  public void sample(Sampler sum) {
     for (int x = 0; x != width; x++) {
       for (int y = 0; y != height; y++) {
-        setPixel(x, y, kreis.getColor(x, y));
+        setPixel(x, y, sum.getColor(x, y));
       }
     }
   }
 
-  public void supersampeling(Sampler kreis, int n) {
+  public void supersampeling(Sampler sum, int n) {
     for (int x = 0; x != width; x++) {
       for (int y = 0; y != height; y++) {
         Color pixelcolor = black;
         for (int i = 0; i < n; i++) {
           double rx = Random.random();
           double ry = Random.random();
-          double xs = x + rx;
-          double ys = y + ry;
-
-          pixelcolor = add(pixelcolor, kreis.getColor(xs, ys));
+          double xs = x + (rx + rx) / n;
+          double ys = y + (ry + ry) / n;
+          pixelcolor = add(pixelcolor, sum.getColor(xs, ys));
         }
-        setPixel(x, y, divide(pixelcolor, n));
+        setPixel(x, y, divide(pixelcolor, n*n));
       }
     }
   }
