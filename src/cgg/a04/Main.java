@@ -40,6 +40,7 @@ public class Main {
     shapes2.add(new Kugel(new Point(-1.6, 0.4, -4), 0.3, Vector.black));
     shapes2.add(new Kugel(new Point(-1.8, -4, -7), 2.5, Vector.black));
     shapes2.add(new Kugel(new Point(-1.7, -4, -6), 1.95, Vector.white));
+    //shapes2.add(new Fläche(new Point(0.0, -1.5, 0),new Direction(1, 1, 0), y,Vector.green));
 
     var scene = new Group(shapes2);
 
