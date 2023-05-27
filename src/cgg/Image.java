@@ -18,7 +18,7 @@ public class Image {
 
   public void setPixel(int x, int y, Color color) {
     int index = (width * y + x) * 3;
-    double gamma = 1 / 6.2;
+    double gamma = 1 / 4.2;
     data[index] = Math.pow(color.r(), gamma);
     data[index + 1] = Math.pow(color.g(), gamma);
     data[index + 2] = Math.pow(color.b(), gamma);
