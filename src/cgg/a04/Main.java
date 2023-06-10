@@ -48,7 +48,7 @@ public class Main {
 
     // Creates an image and iterates over all pixel positions inside the image.
     var image = new Image(width, height);
-    image.supersampeling(content, 4);
+    image.supersampling(content, 4);
 
     // Write the image to disk.
     final String filename = "doc/a04-scene.png";

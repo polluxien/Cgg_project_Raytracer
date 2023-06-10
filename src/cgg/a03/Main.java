@@ -35,7 +35,7 @@ public class Main {
 
     // Creates an image and iterates over all pixel positions inside the image.
     var image = new Image(width, height);
-    image.supersampeling(content, 100);
+    image.supersampling(content, 100);
 
     // Write the image to disk.
     final String filename = "doc/a03-spheres.png";

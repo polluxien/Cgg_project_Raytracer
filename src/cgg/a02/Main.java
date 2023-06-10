@@ -14,7 +14,7 @@ public class Main {
     // Creates an image and iterates over all pixel positions inside the image.
     Image image = new Image(width, height);
     //image.sample(cDiscs);
-    image.supersampeling(cDiscs, 100);
+    image.supersampling(cDiscs, 100);
 
     // Write the image to disk.
     final String filename = "doc/a02-discs-supersampling.png";
