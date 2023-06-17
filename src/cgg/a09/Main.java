@@ -69,19 +69,19 @@ public class Main {
 
         shapes.add(new Hintergrund(
                 new Hintergrundmaterial(
-                        new Tt(Matrix.rotation(0.5, 0, 0, 20), new ImageTexture("doc/Texturen/Pano-2.jpeg")))));
+                        new Tt(Matrix.translation(0, 0, 10), new ImageTexture("doc/Texturen/Pano-1.jpeg")))));
 
         // Muster
         Collections.addAll(texturen, muster1, muster2, muster3, muster4, muster5, muster6, muster7, muster8);
 
         // Character
-        double anzahl = 50;
-        double Xmin = -40;
-        double Xmax = 30;
-        double Ymin = 1.5;
-        double Ymax = 6;
-        double Zmin = -30;
-        double Zmax = 2;
+        double anzahl = 20;
+        double Xmin = -15;
+        double Xmax = 7;
+        double Ymin = -2;
+        double Ymax = 3;
+        double Zmin = -10;
+        double Zmax = 6;
 
         for (int i = 0; i < anzahl; i++) {
             double randX = new Random().nextDouble(Xmax - Xmin + 1) + Xmin;
@@ -96,7 +96,7 @@ public class Main {
         }
 
         // Shapes
-        shapes.add(new Fläche(new Point(0.0, -0.5, 0.0), new Direction(0, 1, 0), 2, gras));
+        //shapes.add(new Fläche(new Point(0.0, -0.5, 0.0), new Direction(0, 1, 0), 2, gras));
 
         var scene = new Group(new Transformation(Matrix.translation(0, 0, 0)), shapes);
 
@@ -105,7 +105,7 @@ public class Main {
         var image = new Image(width, height);
         Instant go = Instant.now();
         try {
-            image.sampleParallel(content, 4);
+            image.sampleParallel(content, 10);
             // für benchmark tests wurde n = 5 gesetzt
         } catch (Exception e) {
             e.printStackTrace();
