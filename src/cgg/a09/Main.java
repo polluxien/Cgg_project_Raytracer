@@ -69,18 +69,18 @@ public class Main {
 
         shapes.add(new Hintergrund(
                 new Hintergrundmaterial(
-                        new Tt(Matrix.translation(0, 0, 10), new ImageTexture("doc/Texturen/Pano-1.jpeg")))));
+                        new Tt(Matrix.translation(0, 0, 100), new ImageTexture("doc/Texturen/Pano-1.jpeg")))));
 
         // Muster
         Collections.addAll(texturen, muster1, muster2, muster3, muster4, muster5, muster6, muster7, muster8);
 
         // Character
-        double anzahl = 20;
+        double anzahl = 40;
         double Xmin = -15;
-        double Xmax = 7;
-        double Ymin = -2;
-        double Ymax = 3;
-        double Zmin = -10;
+        double Xmax = 15;
+        double Ymin = -10;
+        double Ymax = 10;
+        double Zmin = -20;
         double Zmax = 6;
 
         for (int i = 0; i < anzahl; i++) {
