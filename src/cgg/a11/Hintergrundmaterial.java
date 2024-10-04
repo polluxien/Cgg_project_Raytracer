@@ -6,11 +6,11 @@ import cgtools.Vector;
 
 public record Hintergrundmaterial(Sampler emissoin) implements Material {
 
-    public Hintergrundmaterial(Color color){
+    public Hintergrundmaterial(Color color) {
         // var sampler = new Sampler(){
-        //  public Color getColor(double x, double y){
-        //     return color;
-        //    }
+        // public Color getColor(double x, double y){
+        // return color;
+        // }
         // };
         this((double x, double y) -> color);
     }

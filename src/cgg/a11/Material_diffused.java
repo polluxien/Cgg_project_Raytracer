@@ -16,8 +16,8 @@ import cgtools.Vector;
 
 public record Material_diffused(Sampler albedo) implements Material {
 
-    public Material_diffused(Color color){
-      this((double x, double y) -> color);
+    public Material_diffused(Color color) {
+        this((double x, double y) -> color);
     }
 
     @Override
@@ -32,8 +32,10 @@ public record Material_diffused(Sampler albedo) implements Material {
 
     @Override
     // public Ray scatteredRay(Ray r, Hit h) {
-    //     Direction scatteredDirection = Vector.add(h.n(), new Direction(Random.random(),Random.random(),Random.random()));
-    //     return new Ray(h.x(), scatteredDirection, r.getTmin(), Double.POSITIVE_INFINITY);
+    // Direction scatteredDirection = Vector.add(h.n(), new
+    // Direction(Random.random(),Random.random(),Random.random()));
+    // return new Ray(h.x(), scatteredDirection, r.getTmin(),
+    // Double.POSITIVE_INFINITY);
 
     // }
     public Ray scatteredRay(Ray ray, Hit hit) {

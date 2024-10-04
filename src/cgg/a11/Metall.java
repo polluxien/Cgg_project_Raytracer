@@ -20,5 +20,5 @@ public record Metall(Color color, double grad) implements Material {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'scatteredRay'");
     }
-    
+
 }

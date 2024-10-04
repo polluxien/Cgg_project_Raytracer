@@ -55,7 +55,7 @@ public class Main {
 
                 // Shapes
                 // shapes.add(new Fläche(new Point(0.0, -0.5, 0.0), new Direction(0, 1, 0), 2,
-                //                 graublau));
+                // graublau));
 
                 // -- Kugeln
 
@@ -71,7 +71,6 @@ public class Main {
                 lights.add(new DirectionalLight(Vector.red, new Direction(0, -0.3, -5), 0.3));
                 lights.add(new DirectionalLight(Vector.blue, new Direction(0, -0.3, 5), 0.5));
                 lights.add(new DirectionalLight(Vector.white, new Direction(0, 0, 0), 0.2));
-
 
                 var scene = new Group(shapes, new Transformation(Matrix.translation(0, 0, 0)));
 

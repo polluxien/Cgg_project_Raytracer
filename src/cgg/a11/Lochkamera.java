@@ -24,7 +24,7 @@ public class Lochkamera {
         double yv = -(y - height / 2.0);
         double zv = -((width / 2.0) / Math.tan(öffnungswinkel / 2.0));
         Direction u = Vector.normalize(new Direction(xv, yv, zv));
-        return new Ray(Matrix.multiply(v, new Point(0,0,0)),Matrix.multiply(v,u), 0, Double.POSITIVE_INFINITY);
+        return new Ray(Matrix.multiply(v, new Point(0, 0, 0)), Matrix.multiply(v, u), 0, Double.POSITIVE_INFINITY);
     }
 
 }

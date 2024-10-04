@@ -6,7 +6,7 @@ import cgtools.Point;
 public record Hit(double t, Point x, Direction n, Point uv, Material m) {
 
     public Hit(double t, Point x, Direction n, Material m) {
-        this(t, x, n, new Point(0,0,0), m);
+        this(t, x, n, new Point(0, 0, 0), m);
     }
 
     public static Hit closest(Hit a, Hit b) {
